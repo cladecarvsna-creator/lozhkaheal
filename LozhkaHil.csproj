@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    «ложка хил» — аварийная утилита восстановления системы.
+
+    Целевая платформа — .NET Framework 4.8: этот рантайм присутствует в
+    среде восстановления Windows (Win RE) и в стандартных установках Windows,
+    поэтому утилита запускается без установки .NET.
+
+    Сборка: dotnet build LozhkaHil.csproj -c Release
+           (или через Visual Studio / MSBuild на Windows).
+  -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>LozhkaHil</AssemblyName>
+    <RootNamespace>LozhkaHil</RootNamespace>
+    <Deterministic>true</Deterministic>
+    <!-- Манифест запрашивает права администратора для операций с реестром/процессами. -->
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- System.Management нужен для обхода дерева процессов через WMI. -->
+    <Reference Include="System.Management" />
+  </ItemGroup>
+
+</Project>

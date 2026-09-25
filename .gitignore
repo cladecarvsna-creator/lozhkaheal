@@ -1,0 +1,24 @@
+# Результаты сборки .NET
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+*.vsp
+*.vspx
+
+# Скомпилированные бинарники
+*.exe
+*.dll
+*.pdb
+*.ico
+
+# Прочее
+*.log
+Thumbs.db
